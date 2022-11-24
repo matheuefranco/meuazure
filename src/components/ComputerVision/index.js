@@ -36,7 +36,6 @@ function ComputerVision() {
     return (
       <div>
       <h2>Tags</h2>
-
     <table className="table">
         <thead>
           <tr>
@@ -63,7 +62,6 @@ function ComputerVision() {
   const DisplayCategorias = () =>{
     return (
         <div>
-             <h2 className="display-2">Visão Computacional</h2>
         <div><img src={analysis.URL} height="200" border="1" alt="Imagem" /></div>
         <h3>Categorias</h3>
       <table className="table">
@@ -90,10 +88,21 @@ function ComputerVision() {
     )
 };
 
+const DisplayCaption=()=>{
+  return(
+      <div>
+        <h2> Descrição da imagem </h2>
+        {analysis.description.captions[0].text}
+      </div>
+  )
+};
 
   const DisplayResults = () => {
     return (
       <div>
+        {DisplayCaption()}
+        {DisplayCategorias()}
+        {DisplayTag()}
         {PrettyPrintJson(analysis)}
       </div>
     )
@@ -107,7 +116,7 @@ function ComputerVision() {
         <div className="text-center">
           <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">URL</span>
-            <input class="form-control" type="text" placeholder="Entre com a URL" size="50" onChange={handleChange}></input>
+              <input class="form-control" type="text" placeholder="Entre com a URL" size="50" onChange={handleChange}></input>
             
           </div>
           <button className='btn btn-secondary' onClick={sendImage}>Analisar</button> 
