@@ -4,6 +4,7 @@ import App from './App';
 import Header from './components/Header'
 import Banner from './components/Banner'
 import './index.css'
+import ComputerVision from './components/ComputerVision';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,8 @@ root.render(
           url={"https://www.youtube.com/watch?v=3BhkeY974Rg"}
           videoDescription={"IFSULDEMINAS"}
           />
-
+         <ComputerVision />  
+        
     </div>
 );
 
